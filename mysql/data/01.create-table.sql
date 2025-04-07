@@ -1,7 +1,6 @@
 CREATE TABLE IF NOT EXISTS categories (
     category_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    description TEXT
+    name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS products (
