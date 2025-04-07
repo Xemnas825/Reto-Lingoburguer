@@ -1,0 +1,14 @@
+DROP TABLE candidates;
+DROP TABLE job_offers;
+DROP TABLE ratings;
+DROP TABLE order_details;
+DROP TABLE orders;
+DROP TABLE payment_methods;
+DROP TABLE employees;
+DROP TABLE jobs;
+DROP TABLE establishments;
+DROP TABLE clients;
+DROP TABLE products_allergens;
+DROP TABLE allergens;
+DROP TABLE products;
+DROP TABLE categories;
