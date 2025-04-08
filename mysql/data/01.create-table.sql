@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     description TEXT,
-    price NUMBER(10,2),
+    price DECIMAL(10,2),
     availability BOOLEAN,
     image_url VARCHAR(255),
     category_id1 INT,
@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS establishments (
 CREATE TABLE IF NOT EXISTS jobs (
     job_id INT AUTO_INCREMENT PRIMARY KEY,
     job_title VARCHAR(100) NOT NULL,
-    min_salary NUMBER(10,2),
-    max_salary NUMBER(10,2)
+    min_salary DECIMAL(10,2),
+    max_salary DECIMAL(10,2)
 );
 
 CREATE TABLE IF NOT EXISTS employees (
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS employees (
     address VARCHAR(100),
     password_hash VARCHAR(255) NOT NULL,
     hire_date DATE,
-    salary NUMBER(10,2),
+    salary DECIMAL(10,2),
     job_id1 INT,
     establishment_id1 INT,
     FOREIGN KEY (job_id1) REFERENCES jobs (job_id) ON DELETE SET NULL,
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS orders (
     date_order DATE,
     type_order ENUM('online', 'physical'),
     status ENUM('local', 'online', 'take_away'),
-    total_price NUMBER(10,2),
+    total_price DECIMAL(10,2),
     establishment_id2 INT,
     employee_id1 INT,
     client_id1 INT,
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS orders (
 CREATE TABLE IF NOT EXISTS order_details (
     detail_id INT AUTO_INCREMENT PRIMARY KEY,
     quantity INT,
-    unit price NUMBER(5,2),
+    unit_price DECIMAL(5,2),
     notes TEXT,
     order_id1 INT,
     product_id2 INT,
@@ -103,12 +103,12 @@ CREATE TABLE IF NOT EXISTS order_details (
 
 CREATE TABLE IF NOT EXISTS ratings (
     rating_id INT AUTO_INCREMENT PRIMARY KEY,
-    score INT CHECK (puntuacion BETWEEN 1 AND 5),
+    score INT CHECK(score BETWEEN 1 AND 5),
     comment TEXT,
     date_rating DATE,
     order_id2 INT,
     client_id2 INT,
-    FOREIGN KEY (order_id2) REFERENCES orders (order_id) ON DELETE SET NULL;
+    FOREIGN KEY (order_id2) REFERENCES orders (order_id) ON DELETE SET NULL,
     FOREIGN KEY (client_id2) REFERENCES clients (client_id) ON DELETE SET NULL
 );
 
@@ -116,8 +116,8 @@ CREATE TABLE IF NOT EXISTS job_offers (
     job_offer_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(50),
     description TEXT,
-    min_salary NUMBER(10,2),
-    max_salary NUMBER(10,2),
+    min_salary DECIMAL(10,2),
+    max_salary DECIMAL(10,2),
     status BOOLEAN,
     publication_date DATE, 
     end_date DATE,
@@ -142,4 +142,4 @@ CREATE TABLE IF NOT EXISTS candidates (
     availability VARCHAR(255),
     job_offer_id1 INT,
     FOREIGN KEY (job_offer_id1) REFERENCES job_offers (job_offer_id) ON DELETE SET NULL
-)
+);

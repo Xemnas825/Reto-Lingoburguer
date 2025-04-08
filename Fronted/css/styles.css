@@ -13,7 +13,75 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+}
+
+@font-face {
+    font-family:'MiFuentePersonalizada' ;
+    src: url('../fonts/duality.otf') format('opentype');
+};
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    font-family: 'MiFuentePersonalizada';
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+    color: #ebd55a;
+}
+
+nav ul li a {
+    font-weight: 600;
+    font-size: em;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+nav ul li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li:hover::after {
+    width: 100%;
+}
+
+.header-social a {
+    margin-left: 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.header-social a:hover {
+    color: var(--primary-color);
+}
+
+.logo {
+    height: 60px;
 }
 
 body {
@@ -52,72 +120,7 @@ a {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Header */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: all 0.3s ease;
-}
 
-.logo {
-    height: 60px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 15px;
-    position: relative;
-}
-
-nav ul li a {
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: var(--primary-color);
-}
-
-nav ul li::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-nav ul li:hover::after {
-    width: 100%;
-}
-
-.header-social a {
-    margin-left: 15px;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.header-social a:hover {
-    color: var(--primary-color);
-}
 
 /* Hero Section */
 .hero {
@@ -404,16 +407,14 @@ footer {
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 15px;
+      
     }
     
     .logo {
         margin-bottom: 15px;
     }
     
-    nav ul {
-        margin: 15px 0;
-    }
+   
     
     .hero-content h1 {
         font-size: 2.5rem;
