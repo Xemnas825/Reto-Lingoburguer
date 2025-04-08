@@ -1,37 +1,53 @@
-/* Estilos generales */
-:root {
-    --primary-color: #e63946;
-    --secondary-color: #1d3557;
-    --accent-color: #f1faee;
-    --text-color: #333;
-    --light-text: #f1faee;
-    --dark-bg: #1d3557;
-    --light-bg: #f1faee;
+/* ==========================================================================
+   VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================================================== */
+   :root {
+    /* Paleta de colores del sitio */
+    --primary-color: #e63946;     /* Rojo para acentos y botones */
+    --secondary-color: #1d3557;   /* Azul oscuro para fondos y textos importantes */
+    --accent-color: #f1faee;      /* Color claro para fondos alternativos */
+    --text-color: #333;           /* Color base para textos */
+    --light-text: #f1faee;        /* Color claro para textos sobre fondos oscuros */
+    --dark-bg: #1d3557;           /* Fondo oscuro para secciones contrastantes */
+    --light-bg: #f1faee;          /* Fondo claro para secciones principales */
+    --golden: #ebd55a;            /* Color dorado para elementos destacados */
 }
 
+/* Reset básico para todos los elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 
+/* Configuración de fuente personalizada */
+@font-face {
+    font-family: 'MiFuentePersonalizada';
+    src: url('../fonts/duality.otf') format('opentype');
+}
+
+/* Estilos básicos del body */
 body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
+/* Estilos generales para títulos */
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
 }
 
+/* Estilos generales para enlaces */
 a {
     text-decoration: none;
     color: inherit;
 }
 
+/* Estilo de botón general */
 .btn {
     display: inline-block;
     background-color: var(--primary-color);
@@ -52,48 +68,57 @@ a {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Header */
+/* ==========================================================================
+   HEADER Y NAVEGACIÓN
+   ========================================================================== */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
+    background-color: transparent; /* Header transparente para que se vea el video */
+    width: 100%;
 }
 
-.logo {
-    height: 60px;
+/* Contenedor de navegación - ocupa todo el ancho */
+nav {
+    width: 100%;
 }
 
+/* Lista de navegación */
 nav ul {
     display: flex;
     list-style: none;
+    font-family: 'MiFuentePersonalizada';
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Fondo negro para el menú */
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
+/* Elementos de la lista de navegación */
 nav ul li {
     margin: 0 15px;
     position: relative;
+    color: var(--golden); /* Color dorado para los elementos del menú */
 }
 
+/* Enlaces en la navegación */
 nav ul li a {
     font-weight: 600;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     transition: color 0.3s ease;
 }
 
+/* Efecto hover para enlaces */
 nav ul li a:hover {
     color: var(--primary-color);
 }
 
+/* Línea decorativa bajo los elementos del menú (aparece al hover) */
 nav ul li::after {
     content: '';
     position: absolute;
@@ -109,6 +134,7 @@ nav ul li:hover::after {
     width: 100%;
 }
 
+/* Estilos para iconos sociales en el header */
 .header-social a {
     margin-left: 15px;
     font-size: 18px;
@@ -119,33 +145,87 @@ nav ul li:hover::after {
     color: var(--primary-color);
 }
 
-/* Hero Section */
+/* Estilos para el logo */
+.logo {
+    height: 60px;
+}
+
+/* Contenedor del logo - asegura que tenga fondo negro */
+.logo-container {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   SECCIÓN HERO CON VIDEO DE FONDO
+   ========================================================================== */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
+    height: 100vh; /* Altura completa de la ventana */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     padding-top: 80px;
+    overflow: hidden;
 }
 
+/* Contenedor del video de fondo */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Coloca el video detrás del contenido */
+}
+
+/* Estilo del video */
+.hero-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video cubra todo el contenedor */
+}
+
+/* Capa semitransparente sobre el video para mejorar la legibilidad del texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Contenido principal de la sección hero */
+.hero-content {
+    position: relative;
+    z-index: 1; /* Por encima del video y overlay */
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Título principal en la sección hero */
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para mejorar legibilidad */
 }
 
+/* Párrafo en la sección hero */
 .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 30px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* About Section */
+/* ==========================================================================
+   SECCIÓN SOBRE NOSOTROS
+   ========================================================================== */
 .about {
     padding: 100px 10%;
     display: flex;
@@ -179,7 +259,9 @@ nav ul li:hover::after {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Menu Section */
+/* ==========================================================================
+   SECCIÓN MENÚ
+   ========================================================================== */
 .menu {
     padding: 100px 10%;
     text-align: center;
@@ -192,6 +274,7 @@ nav ul li:hover::after {
     color: var(--secondary-color);
 }
 
+/* Categorías del menú */
 .menu-categories {
     margin-bottom: 40px;
     display: flex;
@@ -215,6 +298,7 @@ nav ul li:hover::after {
     color: white;
 }
 
+/* Grid de elementos del menú */
 .menu-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -260,7 +344,9 @@ nav ul li:hover::after {
     font-size: 1.2rem;
 }
 
-/* Gallery Section */
+/* ==========================================================================
+   SECCIÓN GALERÍA
+   ========================================================================== */
 .gallery {
     padding: 80px 10%;
     background-color: var(--light-bg);
@@ -291,7 +377,9 @@ nav ul li:hover::after {
     transform: scale(1.05);
 }
 
-/* Contact Section */
+/* ==========================================================================
+   SECCIÓN CONTACTO
+   ========================================================================== */
 .contact {
     padding: 100px 10%;
     display: flex;
@@ -322,6 +410,7 @@ nav ul li:hover::after {
     font-size: 1.2rem;
 }
 
+/* Redes sociales en contacto */
 .social-media {
     margin-top: 30px;
 }
@@ -343,6 +432,7 @@ nav ul li:hover::after {
     transform: translateY(-3px);
 }
 
+/* Formulario de contacto */
 .contact-form {
     flex: 1;
 }
@@ -372,7 +462,9 @@ nav ul li:hover::after {
     width: 100%;
 }
 
-/* Footer */
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 footer {
     background-color: #0d1b2a;
     color: white;
@@ -385,8 +477,12 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Responsive Design */
+/* ==========================================================================
+   DISEÑO RESPONSIVO
+   ========================================================================== */
+/* Para tablets y dispositivos medianos */
 @media (max-width: 992px) {
+    /* Cambios en las secciones about y contact */
     .about, .contact {
         flex-direction: column;
     }
@@ -396,25 +492,24 @@ footer {
         margin-bottom: 50px;
     }
     
+    /* Ajuste de la galería a 2 columnas */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Para móviles y tablets pequeñas */
 @media (max-width: 768px) {
+    /* Ajuste del header para móviles */
     header {
         flex-direction: column;
-        padding: 15px;
     }
     
     .logo {
         margin-bottom: 15px;
     }
     
-    nav ul {
-        margin: 15px 0;
-    }
-    
+    /* Reducción del tamaño de texto en hero */
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -423,16 +518,20 @@ footer {
         font-size: 1.2rem;
     }
     
+    /* Ajuste de las categorías del menú */
     .menu-categories {
         flex-wrap: wrap;
     }
 }
 
+/* Para móviles pequeños */
 @media (max-width: 576px) {
+    /* Galería en una sola columna */
     .gallery-grid {
         grid-template-columns: 1fr;
     }
     
+    /* Menú de navegación en columna */
     nav ul {
         flex-direction: column;
         align-items: center;
