@@ -126,48 +126,6 @@ nav ul li:hover::after {
     src: url('../fonts/duality.otf') format('opentype');
 }
 
-/* Estilos básicos del body */
-body {
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-}
-
-/* Estilos generales para títulos */
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-}
-
-/* Estilos generales para enlaces */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Estilo de botón general */
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #c1121f;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
 
 
 /* ==========================================================================
@@ -274,6 +232,49 @@ a {
 /* ==========================================================================
    SECCIÓN CARTA
    ========================================================================== */
+/* Estilos básicos del body */
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/* Estilos generales para títulos */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Estilos generales para enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilo de botón general */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 .carta {
     padding: 100px 10%;
     text-align: center;
