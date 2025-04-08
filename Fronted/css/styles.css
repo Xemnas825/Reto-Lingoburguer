@@ -13,65 +13,10 @@
     --golden: #ebd55a;            /* Color dorado para elementos destacados */
 }
 
-/* Reset básico para todos los elementos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Configuración de fuente personalizada */
-@font-face {
-    font-family: 'MiFuentePersonalizada';
-    src: url('../fonts/duality.otf') format('opentype');
-}
-
-/* Estilos básicos del body */
-body {
-    color: var(--text-color);
-    line-height: 1.6;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-/* Estilos generales para títulos */
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-}
-
-/* Estilos generales para enlaces */
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Estilo de botón general */
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #c1121f;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 /* ==========================================================================
    HEADER Y NAVEGACIÓN
    ========================================================================== */
-header {
+   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,7 +28,14 @@ header {
 
 /* Contenedor de navegación - ocupa todo el ancho */
 nav {
-    width: 100%;
+position: fixed; 
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1000;
+  background-color: black;
+  border-bottom: 6px solid black;
+  padding-top: 30px;
 }
 
 /* Lista de navegación */
@@ -93,17 +45,20 @@ nav ul {
     font-family: 'MiFuentePersonalizada';
     justify-content: center;
     align-items: center;
-    background-color: black; /* Fondo negro para el menú */
+    background-color: black; /* Fondo negro para el carta */
     width: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 0%;
+    padding: 0%;
+    margin-top: auto;
+
+    
 }
 
 /* Elementos de la lista de navegación */
 nav ul li {
-    margin: 0 15px;
+    margin: 0% 15px;
     position: relative;
-    color: var(--golden); /* Color dorado para los elementos del menú */
+    color: var(--golden); /* Color dorado para los elementos del carta */
 }
 
 /* Enlaces en la navegación */
@@ -118,7 +73,7 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
-/* Línea decorativa bajo los elementos del menú (aparece al hover) */
+/* Línea decorativa bajo los elementos del carta (aparece al hover) */
 nav ul li::after {
     content: '';
     position: absolute;
@@ -157,6 +112,63 @@ nav ul li:hover::after {
     align-items: center;
     justify-content: center;
 }
+
+/* Reset básico para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración de fuente personalizada */
+@font-face {
+    font-family: 'MiFuentePersonalizada';
+    src: url('../fonts/duality.otf') format('opentype');
+}
+
+/* Estilos básicos del body */
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+/* Estilos generales para títulos */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Estilos generales para enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilo de botón general */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 
 /* ==========================================================================
    SECCIÓN HERO CON VIDEO DE FONDO
@@ -260,22 +272,22 @@ nav ul li:hover::after {
 }
 
 /* ==========================================================================
-   SECCIÓN MENÚ
+   SECCIÓN CARTA
    ========================================================================== */
-.menu {
+.carta {
     padding: 100px 10%;
     text-align: center;
     background-color: white;
 }
 
-.menu h2 {
+.carta h2 {
     font-size: 2.5rem;
     margin-bottom: 50px;
     color: var(--secondary-color);
 }
 
-/* Categorías del menú */
-.menu-categories {
+/* Categorías del carta */
+.carta-categories {
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
@@ -298,15 +310,15 @@ nav ul li:hover::after {
     color: white;
 }
 
-/* Grid de elementos del menú */
-.menu-items {
+/* Grid de elementos del carta */
+.carta-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
     margin-top: 50px;
 }
 
-.menu-item {
+.carta-item {
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
@@ -314,29 +326,29 @@ nav ul li:hover::after {
     transition: transform 0.3s ease;
 }
 
-.menu-item:hover {
+.carta-item:hover {
     transform: translateY(-10px);
 }
 
-.menu-item img {
+.carta-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-.menu-item h3 {
+.carta-item h3 {
     padding: 20px 20px 10px;
     font-size: 1.5rem;
     color: var(--secondary-color);
 }
 
-.menu-item p {
+.carta-item p {
     padding: 0 20px;
     color: #666;
     font-size: 0.9rem;
 }
 
-.menu-item .price {
+.carta-item .price {
     display: block;
     padding: 20px;
     font-weight: 700;
@@ -518,8 +530,8 @@ footer {
         font-size: 1.2rem;
     }
     
-    /* Ajuste de las categorías del menú */
-    .menu-categories {
+    /* Ajuste de las categorías del carta */
+    .carta-categories {
         flex-wrap: wrap;
     }
 }
@@ -531,7 +543,7 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    /* Menú de navegación en columna */
+    /* carta de navegación en columna */
     nav ul {
         flex-direction: column;
         align-items: center;
