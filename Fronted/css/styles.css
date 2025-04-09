@@ -390,61 +390,6 @@ a {
     transform: scale(1.05);
 }
 
-/* ==========================================================================
-   SECCIÓN CONTACTO
-   ========================================================================== */
-.contact {
-    padding: 100px 10%;
-    display: flex;
-    background-color: var(--dark-bg);
-    color: white;
-}
-
-.contact-info {
-    flex: 1;
-    padding-right: 50px;
-}
-
-.contact-info h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: white;
-}
-
-.contact-info p {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.contact-info i {
-    margin-right: 15px;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-}
-
-/* Redes sociales en contacto */
-.social-media {
-    margin-top: 30px;
-}
-
-.social-media a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    margin-right: 15px;
-    transition: all 0.3s ease;
-}
-
-.social-media a:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
 /* Formulario de contacto */
 .contact-form {
     flex: 1;
@@ -475,20 +420,37 @@ a {
     width: 100%;
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-footer {
-    background-color: #0d1b2a;
+/*  SECCIÓN CONTACTO */
+.contact {
+    padding: 100px 10%;
+    display: flex;
+    background-color: var(--dark-bg);
     color: white;
-    text-align: center;
-    padding: 30px 0;
 }
 
-.footer-logo {
-    height: 50px;
-    margin-bottom: 20px;
+.contact-info {
+    flex: 1;
+    padding-right: 50px;
 }
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 15px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
 
 /* ==========================================================================
    DISEÑO RESPONSIVO
@@ -513,11 +475,6 @@ footer {
 
 /* Para móviles y tablets pequeñas */
 @media (max-width: 768px) {
-    /* Ajuste del header para móviles */
-    header {
-        flex-direction: column;
-    }
-    
     .logo {
         margin-bottom: 15px;
     }
