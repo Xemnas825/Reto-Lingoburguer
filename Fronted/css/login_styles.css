@@ -25,11 +25,11 @@ body {
 }
 
 .login-card h2 {
-    /* text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    /* font-size: 1.8rem;
     color: #f1c40f; */
 
+    text-align: center;
+    margin-bottom: 1.5rem;
 
     font-size: 1.8rem;
     background-image: linear-gradient(to top, #ff6600, #fbff00);
@@ -71,11 +71,12 @@ body {
 }
 
 .login-card .login-btn:hover {
-    background-color: #e1b70e;
+    background-color: #c5a00d;
 }
 
 .login-card .options {
-    margin-top: 1rem;
+    margin-top: 3rem;
+    margin-top: 3rem;
     text-align: center;
 }
 
@@ -88,4 +89,12 @@ body {
 
 .login-card .options a:hover {
     color: #f1c40f;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
 }

@@ -13,23 +13,36 @@
 
 <body>
     <form class="login-card">
+
+        
         <span class="material-symbols-outlined">
             <a href="./index.html">arrow_back_ios</a>
         </span>
+
         <h2>Welcome to Lingoburguer</h2>
 
-        <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" required />
+        <label for="username">email</label>
+        <input type="text" id="username" placeholder="Enter your email" required />
+        <label for="username">Confirm email</label>
+        <input type="text" id="username" placeholder="Confirm your email" required />
+
+        <!-- Funcion en la que se tiene que comprobar que el correo no esta siendo
+         utilizado en otra cuenta y que ademas es identico en los dos campos
+         
+         respecto a las contraseñas hacer una funcion para comprobar que son identicas en los dos campos
+         y cumple con los estandares de seguridad -->
+
         <label for="password">Password</label>
         <input type="password" id="password" placeholder="Enter your password" required />
+        <label for="password">Confirm Password</label>
+        <input type="password" id="password" placeholder="Confirm your password" required />
 
-        <button type="submit" class="login-btn">Log In</button>
+        <button type="submit" class="login-btn">Create an Accout</button>
 
+
+        <!-- Cambio entre pantallas de login y SignIn -->
         <div class="options">
-            <a href="#">¿Forgot password?</a>
-            <br>
-            <!-- Cambio entre pantallas de login y SignIn -->
-            <a href="./SignIn.html">Create an account</a>
+            <a href="./login.html">Log in</a>
         </div>
     </form>
 
