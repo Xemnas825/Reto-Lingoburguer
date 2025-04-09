@@ -89,6 +89,9 @@ nav ul li:hover::after {
     width: 100%;
 }
 
+
+
+
 /* Estilos para iconos sociales en el header */
 .header-social a {
     margin-left: 15px;

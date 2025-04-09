@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Variables para elementos del DOM
     const categoryBtns = document.querySelectorAll('.category-btn');
-    const cartaSections = document.querySelectorAll('.carta-items');
+    const menuSections = document.querySelectorAll('.menu-items');
     const header = document.querySelector('header');
     
-    // ===== FUNCIONALIDAD DEL CARTA =====
-    // Cambiar categorías del carta al hacer clic
+    // ===== FUNCIONALIDAD DEL MENÚ =====
+    // Cambiar categorías del menú al hacer clic
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             // Remover clase active de todos los botones
@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Obtener la categoría a mostrar
             const category = this.getAttribute('data-category');
             
-            // Mostrar/ocultar las secciones del carta según la categoría
-            cartaSections.forEach(section => {
+            // Mostrar/ocultar las secciones del menú según la categoría
+            menuSections.forEach(section => {
                 if (section.id === category) {
                     section.style.display = 'grid';
                 } else {
@@ -63,3 +63,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
