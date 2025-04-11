@@ -123,7 +123,7 @@ nav ul li:hover::after {
 /* Configuración de fuente personalizada */
 @font-face {
     font-family: 'MiFuentePersonalizada';
-    src: url('../fonts/duality.otf') format('opentype');
+    src: url('../fonts/Teko-VariableFont_wght.ttf') format('truetype');
 }
 
 
