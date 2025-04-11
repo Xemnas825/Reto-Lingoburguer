@@ -13,9 +13,7 @@
     --golden: #ebd55a;            /* Color dorado para elementos destacados */
 }
 
-/* ==========================================================================
-   HEADER Y NAVEGACIÓN
-   ========================================================================== */
+/*   HEADER Y NAVEGACIÓN */
    header {
     display: flex;
     justify-content: space-between;
