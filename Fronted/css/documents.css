@@ -1,46 +1,18 @@
-/*  FOOTER  */
 
 @font-face {
     font-family: 'MiFuentePersonalizada';
     src: url('../fonts/Teko-VariableFont_wght.ttf') format('truetype');
 }
 
-
-footer {
+*{
     font-family: 'MiFuentePersonalizada';
     background-color: black;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
-.footer-content {
-    padding: 8%;
-}
-
-.footer-logo {
-    height: 50px;
-}
-
-
-.footer-locations {
-    flex-direction: column;
-}
-
-.footer-locations-pack {
-    padding-bottom: 5%
-}
-
-.footer-name-location h3 {
-    background-image: linear-gradient(to top, #ff6600, #fbff00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-family: 'MiFuentePersonalizada';
-}
-
-/* Redes sociales en contacto */
 
 .footer-socialmedia {
     display: flex;
@@ -108,44 +80,29 @@ footer {
     height: 0px;
 }
 
+.main{
+    color: white;
 
-.footer-links a {
-    font-size: 20px;
-    padding: 4.5%;
+}
+
+.main h1{
+    font-size: 375%;
+    padding-top: 5%;
+    
+}
+
+.main h2{
+    font-size: 200%;
+ 
     background-image: linear-gradient(to top, #ff6600, #fbff00);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    
 }
 
-.footer-privacy{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
-    color: grey;
-    padding-top: 3%;
-
+.main p{
+    font-size: 125%;
+    letter-spacing: 1px;
+    padding-bottom: 5%;
 }
-
-
-
-
-
-
-
-/* RESPONSIVE */
-
-@media (min-width: 768px) {
-
-    /* Ajuste del header para móviles */
-    header {
-        flex-direction: column;
-    }
-
-    .footer-locations {
-        display: flex;
-        justify-content: space-evenly;
-
-    }
-}
-
-@media (min-width: 1024px) {}
